@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+/*
+ *■利用までの手順
+ 	①canvasjs.min.jsをダウンロードする。(公式サイトからまたはCDN経由で)
+ 	②body要素内にグラフを表示するdivを記述。(id属性はChart関数の第一引数に一致。グラフ全体のサイズはこちらから行う。)
+ 	③グラフ表示を行うスクリプトを記述。(基本的には書式はどのグラフでも同様。option属性を追加することで表示を切り替える。)
+ 	④設定を施したchartインスタンスのrender関数を実行。
+*/
+
+//グラフのy軸は自動で設定される(要素の中で一番値が高いものを認識し、その値の繰り上がりの値を設定。)
+//グラフの高は比率で表示しているので、値開きがある場合でも画面崩れはしない。
+//グラフの種類：column doughnut line splineArea etc(typeの指定を左記から選択すれば、表示が切り替わります。デフォルトはcolumn)
+
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer", {
+		title:{
+			text: "社内会議の時間"
+		},
+		data: [              
+		{	// Change type to "doughnut", "line", "splineArea", "bar" etc.
+			type: "doughnut",
+			//color: "darkgreen",
+			dataPoints: [
+				{ label: "鈴木",  y: 9570  },
+				{ label: "御子柴", y: 2730  },
+				{ label: "西村", y: 1320  },
+				{ label: "江口",  y: 2775  },
+				{ label: "新井", y: 2235},
+				{ label: "蛭田",  y: 2550  },
+				{ label: "川島",  y: 3780 },
+				{ label: "嶋田",  y: 465  },
+				{ label: "泉久保",  y: 240  },
+				{ label: "吉田",  y: 975  }
+			]
+		}
+		]
+	});
+	chart.render();
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 500px; width: 100%;"></div>
+<div><a href="http://localhost:3000/index">portal</div>
+</body>
+</html>

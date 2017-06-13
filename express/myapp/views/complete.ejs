@@ -1,0 +1,49 @@
+<html>
+<head lang="ja">
+<meta charset="utf-8">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<title>portal</title>
+<style>
+	.wrapper {
+		margin-top:				10px;
+		margin-left:			10px;
+		width:					100%;
+		height:					500px;
+	}
+
+	#space1 {
+		height:					150px;
+		width:					350px;
+		margin-top:				20px;
+		margin-left:			20px;
+		border:					1px #666 outset;
+	}
+	
+	.test {
+		padding-top: 			10px;
+		padding-left:			10px;
+	}
+</style>
+
+<script>
+function back() {
+	var root = "http://localhost:3000/";
+	window.location.href = root + "index";
+}
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<div id="space1">
+		<table class="test">
+			<tr>
+				<td><span style="color: blue;">登録が完了しました。</span></td>
+			</tr>
+			<tr>
+				<td><button type="button" class="submit" onclick="back();">一覧に戻る</button></td>
+			</tr>
+		</table>
+	</div>
+</div>
+</body>
+</html>
