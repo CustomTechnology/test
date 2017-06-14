@@ -1,0 +1,90 @@
+<html>
+<head lang="ja">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<title>portal</title>
+<style>
+	.wrapper {
+		margin-top:				10px;
+		margin-left:			10px;
+		width:					100%;
+		height:					500px;
+	}
+
+	#space1 {
+		height:					220px;
+		width:					400px;
+		margin-top:				20px;
+		margin-left:			20px;
+		border:					1px #666 outset;
+	}
+	
+	#table {
+		padding-top: 			30px;
+		padding-left:			30px;
+	}
+</style>
+
+<script>
+/*
+$(document).ready(function() {
+	var name = $('#name');
+	var tel = $('#tel');
+	var mailaddress = $('#mailaddress');
+	
+	name.attr('disabled', 'true');
+	tel.attr('disabled', 'true');
+	mailaddress.attr('disabled', 'true');
+});
+*/
+function back() {
+	var root = "/list";
+	window.location.href = root;
+}
+
+
+
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<div id="space1">
+		<form action="/update/complete" method="post" class="board-form">
+			<div id="table">
+				<table>
+					<tr>
+						<td><label>id:</label></td>
+						<td><input type="text" id="id" name="id" class="input" value="<%= id%>"></td>
+					</tr>
+					<tr>
+						<td><label>name:</label></td>
+						<td><input type="text" id="name" name="name" class="input" value="<%= name%>"></td>
+					</tr>
+					
+					<tr>
+						<td><label>tel:</label></td>
+						<td><input type="text" id="tel" name="tel" class="input" value="<%= tel%>"></td>
+					</tr>
+					<tr>
+						<td><label>mailaddress:&nbsp&nbsp</label></td>
+						<td><input type="text" id="mailaddress" name="mailaddress" value="<%= mailaddress%>"></td>
+					</tr>
+					<tr><td></td>
+					<td><span style="color: blue;">更新してもよろしいですか。</span></td></tr>
+					<tr><td>&nbsp</td></tr>
+					<tr>
+						<td></td>
+						<td><button type="submit" class="btn btn-primary">実行</button>
+							<button type="button" class="btn btn-primary" onclick="back();">キャンセル</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
+</div>
+</body>
+
+</html>
